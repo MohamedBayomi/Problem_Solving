@@ -1,0 +1,26 @@
+using System;
+using System.Linq;
+
+namespace ProblemSolving
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var input1 = Console.ReadLine().TrimEnd().Split(' ').ToArray();
+            var n_m = Array.ConvertAll(input1, int.Parse);
+            int n = n_m[0], m = n_m[1];
+            int[] result = new int[n];
+
+            var input2 = Console.ReadLine().TrimEnd().Split(' ').ToArray();
+            var arr = Array.ConvertAll(input2, int.Parse);
+
+            int max = arr.Max();
+            if(m >= max)
+                Console.WriteLine(0);
+            else
+                Console.WriteLine(max-m);
+
+        }
+    }
+}

@@ -1,0 +1,28 @@
+using System;
+using System.Linq;
+
+namespace ProblemSolving
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var t = Console.ReadLine();
+            int n = 0;
+            int.TryParse(t, out n);
+
+            int d1 = 0, d2 = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                var input = Console.ReadLine().TrimEnd().Split(' ').ToArray();
+                var arr = Array.ConvertAll(input, int.Parse);
+
+                d1 += arr[i];
+                d2 += arr[n - 1 - i];
+            }
+
+            Console.WriteLine(Math.Abs(d1 - d2));
+        }
+    }
+}

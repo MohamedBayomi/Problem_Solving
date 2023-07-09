@@ -1,0 +1,54 @@
+using System;
+
+namespace ProblemSolving
+{
+    public class Program
+    {
+        static int[] solve(int a0, int a1, int a2, int b0, int b1, int b2)
+        {
+
+            int[] ret = new int[2];
+
+            if (a0 > b0)
+                ret[0]++;
+            else if (a0 < b0)
+                ret[1]++;
+
+            if (a1 > b1)
+                ret[0]++;
+            else if (a1 < b1)
+                ret[1]++;
+
+            if (a2 > b2)
+                ret[0]++;
+            else if (a2 < b2)
+                ret[1]++;
+
+            return ret;
+        }
+
+        static void Main(string[] args)
+        {
+            string[] a0A1A2 = Console.ReadLine().Split(' ');
+
+            int a0 = Convert.ToInt32(a0A1A2[0]);
+
+            int a1 = Convert.ToInt32(a0A1A2[1]);
+
+            int a2 = Convert.ToInt32(a0A1A2[2]);
+
+            string[] b0B1B2 = Console.ReadLine().Split(' ');
+
+            int b0 = Convert.ToInt32(b0B1B2[0]);
+
+            int b1 = Convert.ToInt32(b0B1B2[1]);
+
+            int b2 = Convert.ToInt32(b0B1B2[2]);
+
+            int[] result = solve(a0, a1, a2, b0, b1, b2);
+
+            Console.WriteLine(string.Join(" ", result));
+
+        }
+    }
+}

@@ -1,0 +1,38 @@
+using System;
+using System.Linq;
+
+namespace ProblemSolving
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var input1 = Console.ReadLine();
+            int n = 0;
+            int.TryParse(input1, out n);
+
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                var input2 = Console.ReadLine();
+                int t = 0;
+                int.TryParse(input2, out t);
+                arr[i] = t;
+            }
+            
+            for (int i = 0; i < n; i++)
+            {
+                int L = 1;
+                for (int j = 0; j < arr[i]; j++)
+                {
+                    if (j % 2 == 0)
+                        L *= 2;
+                    else 
+                        L += 1;
+                }
+                Console.WriteLine(L);
+            }
+
+        }
+    }
+}

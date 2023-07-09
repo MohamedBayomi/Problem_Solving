@@ -1,0 +1,21 @@
+using System;
+using System.Linq;
+
+namespace ProblemSolving
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            
+            var input = Console.ReadLine().TrimEnd().Split(' ').ToArray();
+            var arr = Array.ConvertAll(input, long.Parse);
+
+            long sum = arr.Sum();
+            long min = sum - arr.Max();
+            long max = sum - arr.Min();
+
+            Console.WriteLine(min + " " + max);
+        }
+    }
+}
